@@ -1,15 +1,46 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Review</title>
+    <title>MovieReviewers</title>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script type="text/javascript">
+      WebFontConfig = {
+        google: { families: [ 'Unica+One::latin' ] }
+      };
+      (function() {
+        var wf = document.createElement('script');
+        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+          '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+      })();
+    </script>
   </head>
 
   <body>
-    <%= yield %>
+    <header class="header">
+      <div class="header__bar row">
+        <h1 class="grid-6"><a href="/">MovieReviewers</a></h1>
+        <div class="user_nav grid-6">
+        </div>
+      </div>
+    </header>
+　　
+　　　<main>
+       <div class="content">
+         <img src = "https://images-na.ssl-images-amazon.com/images/I/91l7h8juapL._AC_SY606_.jpg" width="200" height="150">
+         <%=yield%>
+         <a class="post" href="/posts/new">レビュー </a>
+        </div>
+        
+    <footer>
+      <p>
+        Copyright MovieReviewers 2020.
+      </p>
+    </footer>
   </body>
 </html>
